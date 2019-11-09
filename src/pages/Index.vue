@@ -7,12 +7,12 @@
         <q-input outlined v-model="artist" label="Artist" />
         <q-btn
           type="submit"
-          class="full-width"
+          class="full-width q-mt-md"
           :color="isEdit ? 'positive' : 'primary'"
           :label="isEdit ? 'Update' : 'Submit'"
         />
       </form>
-      <q-list bordered separator>
+      <q-list bordered separator class="q-mt-md">
         <q-item
           clickable
           v-ripple
