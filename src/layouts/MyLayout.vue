@@ -26,10 +26,28 @@
       content-class="bg-grey-2"
     >
       <q-list>
+        <q-item-label header>App</q-item-label>
+        <q-item clickable tag="a" to="/">
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Home</q-item-label>
+            <q-item-label caption>Music Library</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" to="/login">
+          <q-item-section avatar>
+            <q-icon name="assignment_ind" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Login</q-item-label>
+            <q-item-label caption>Login Now</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item-label header>Technology Stacks</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://vuejs.org/">
           <q-item-section avatar>
-            <!-- <q-icon name="school" /> -->
             <img src="https://vuejs.org/images/logo.png" height="24px"/>
           </q-item-section>
           <q-item-section>
@@ -39,7 +57,6 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://quasar.dev/">
           <q-item-section avatar>
-            <!-- <q-icon name="code" /> -->
             <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg" height="27px"/>
           </q-item-section>
           <q-item-section>
@@ -49,7 +66,6 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://firebase.google.com/">
           <q-item-section avatar>
-            <!-- <q-icon name="record_voice_over" /> -->
             <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png" height="27px"/>
           </q-item-section>
           <q-item-section>
@@ -59,7 +75,6 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://socket.io/">
           <q-item-section avatar>
-            <!-- <q-icon name="rss_feed" /> -->
             <img src="https://mpng.pngfly.com/20180825/veg/kisspng-socket-io-node-js-javascript-network-socket-websoc-socket-io-logo-in-svg-jpg-png-5b81a6e505cd53.3223084015352235250238.jpg" height="22px"/>
           </q-item-section>
           <q-item-section>
