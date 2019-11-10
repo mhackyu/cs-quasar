@@ -24,7 +24,7 @@
           clickable
           v-ripple
           v-for="(music, index) in musics"
-          :key="index"
+          :key="music.id"
         >
           <q-item-section>
             <q-item-label>{{ music.title }}</q-item-label>
@@ -41,7 +41,7 @@
             <q-btn
               class="full-width"
               color="negative"
-              @click="confitmDelete(index)"
+              @click="confitmDelete(music)"
             >
               <q-icon name="delete" />
             </q-btn>
@@ -64,7 +64,7 @@
             flat
             label="Yes, I want to delete"
             color="primary"
-            @click="deleteItem(selectedIndex)"
+            @click="deleteItem()"
           />
         </q-card-actions>
       </q-card>
@@ -95,16 +95,7 @@ export default {
   name: "PageIndex",
   data() {
     return {
-      musics: [
-        {
-          title: "Bida Ang Saya",
-          artist: "Jollibee"
-        },
-        {
-          title: "Love Ko 'To",
-          artist: "MC Donald"
-        }
-      ],
+      musics: [],
       title: "",
       artist: "",
       isEdit: false,
@@ -114,20 +105,30 @@ export default {
       selectedMusic: {}
     };
   },
+  mounted() {
+    this.$bind('musics', this.$db.collection('musics'));
+  },
   methods: {
     handleSubmit() {
       if (!this.isEdit) {
         // Add new music
-        this.musics.push({
-          title: this.title,
-          artist: this.artist
-        });
-      } else {
-        // Update current selected music
-        this.musics[this.selectedIndex] = {
+        if (this.title === '' && this.artist === '') return;
+        const music = {
           title: this.title,
           artist: this.artist
         };
+        this.$db.collection('musics').add(music)
+          .then((docRef) => {
+            // this.musics.push(music);
+          }).catch((err) => {
+            console.log('err', err);
+          });
+      } else {
+        console.log(this.selectedMusic);
+        this.$db.collection('musics').doc(this.selectedMusic.id).update({
+          title: this.title,
+          artist: this.artist,
+        });
         this.isEdit = false;
         this.selectedIndex = null;
       }
@@ -136,17 +137,19 @@ export default {
     },
     editItem(music, index) {
       console.log("info ", { music, index });
+      this.selectedMusic = music;
       this.title = music.title;
       this.artist = music.artist;
       this.isEdit = true;
       this.selectedIndex = index;
     },
-    confitmDelete(index) {
+    confitmDelete(music) {
+      this.selectedMusic = music; 
       this.isDelete = true;
     },
-    deleteItem(index) {
-      this.musics.splice(index, 1);
-      this.selectedIndex = null;
+    deleteItem() {
+      this.$db.collection('musics').doc(this.selectedMusic.id).delete();
+      this.selectedMusic = {};
       this.isDelete = false;
     },
     playMusic(music) {
