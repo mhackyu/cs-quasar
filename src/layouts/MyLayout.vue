@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Music Library
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Made with 💖 by <a href="https://github.com/mhackyu" target="_blank" style="color: white; text-decoration: none;">mhackyu</a></div>
       </q-toolbar>
     </q-header>
 
@@ -26,59 +26,45 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item-label header>Technology Stacks</q-item-label>
+        <q-item clickable tag="a" target="_blank" href="https://vuejs.org/">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <!-- <q-icon name="school" /> -->
+            <img src="https://vuejs.org/images/logo.png" height="24px"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
+            <q-item-label>Vue</q-item-label>
+            <q-item-label caption>vuejs.org</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://quasar.dev/">
+          <q-item-section avatar>
+            <!-- <q-icon name="code" /> -->
+            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg" height="27px"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Quasar</q-item-label>
             <q-item-label caption>quasar.dev</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
+        <q-item clickable tag="a" target="_blank" href="https://firebase.google.com/">
           <q-item-section avatar>
-            <q-icon name="code" />
+            <!-- <q-icon name="record_voice_over" /> -->
+            <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png" height="27px"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
+            <q-item-label>Firebase</q-item-label>
+            <q-item-label caption>firebase.google.com</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
+        <q-item clickable tag="a" target="_blank" href="https://socket.io/">
           <q-item-section avatar>
-            <q-icon name="chat" />
+            <!-- <q-icon name="rss_feed" /> -->
+            <img src="https://mpng.pngfly.com/20180825/veg/kisspng-socket-io-node-js-javascript-network-socket-websoc-socket-io-logo-in-svg-jpg-png-5b81a6e505cd53.3223084015352235250238.jpg" height="22px"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
+            <q-item-label>Socket.IO</q-item-label>
+            <q-item-label caption>socket.io</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
